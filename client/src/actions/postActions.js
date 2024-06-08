@@ -1,12 +1,14 @@
-import * as api from "../api/api";
+import fetchPosts from "../api/api";
 
 // Action Creators
 
 const getPosts = () => async (dispatch) => {
 	try {
-		const { data } = await api.fetchPosts();
+		const data = await fetchPosts();
+		const res = await data.data;
+		console.log("i am the data:", res);
 		// const diapatch
-		dispatch({ type: "FETCH_ALL", payload: data });
+		dispatch({ type: "FETCH_ALL", payload: res });
 	} catch (error) {
 		console.log(error);
 	}
