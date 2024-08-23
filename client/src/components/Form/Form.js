@@ -1,7 +1,15 @@
 import React from "react";
 
 function Form() {
-	return <div>Form</div>;
+	const handleSubmit = () => {};
+	return (
+		<>
+			<form onSubmit={handleSubmit}>
+				<h1>Creating a memory</h1>
+				
+			</form>
+		</>
+	);
 }
 
 export default Form;
